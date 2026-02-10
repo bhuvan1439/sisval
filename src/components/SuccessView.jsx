@@ -79,8 +79,8 @@ const SuccessView = ({ name }) => {
                 </motion.div>
             </motion.div>
 
-            <DancingBear style={{ bottom: '20px', left: '20px', fontSize: '5rem' }} />
-            <DancingBear style={{ bottom: '20px', right: '20px', fontSize: '5rem' }} />
+            <DancingBear style={{ bottom: '20px', left: '20px' }} className="text-5xl md:text-8xl" />
+            <DancingBear style={{ bottom: '20px', right: '20px' }} className="text-5xl md:text-8xl" />
         </motion.div>
     );
 };

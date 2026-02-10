@@ -37,10 +37,10 @@ const ProposalView = ({ onYes, name }) => {
             <FloatingHearts />
             <HeartRain />
 
-            <div className="z-10 text-center p-8">
-                <div className="mb-12 overflow-hidden min-h-[100px] flex items-center justify-center">
+            <div className="z-10 text-center p-4 md:p-8 w-full max-w-4xl">
+                <div className="mb-8 md:mb-12 overflow-hidden min-h-[80px] md:min-h-[100px] flex items-center justify-center">
                     <Sparkles>
-                        <motion.div className="text-5xl md:text-7xl font-pacifico text-brand-red drop-shadow-md">
+                        <motion.div className="text-4xl md:text-7xl font-pacifico text-brand-red drop-shadow-md leading-tight">
                             {text.join(" ").split("").map((char, index) => (
                                 <motion.span
                                     key={index}
@@ -59,7 +59,7 @@ const ProposalView = ({ onYes, name }) => {
                     </Sparkles>
                 </div>
 
-                <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
+                <div className="flex flex-col md:flex-row gap-6 md:gap-8 justify-center items-center w-full">
                     <motion.button
                         whileHover={{ scale: 1.1, boxShadow: "0px 0px 20px rgba(255, 77, 77, 0.6)" }}
                         whileTap={{ scale: 0.9 }}
@@ -72,23 +72,24 @@ const ProposalView = ({ onYes, name }) => {
                             boxShadow: { repeat: Infinity, duration: 1.5 }
                         }}
                         onClick={onYes}
-                        className="px-12 py-4 bg-brand-red text-white text-2xl font-bold rounded-full shadow-lg transition-all cursor-pointer z-50"
+                        className="w-full md:w-auto px-8 md:px-12 py-3 md:py-4 bg-brand-red text-white text-xl md:text-2xl font-bold rounded-full shadow-lg transition-all cursor-pointer z-50 order-2 md:order-1"
                     >
                         YES! 💖
                     </motion.button>
 
                     <motion.button
                         onMouseEnter={handleNoHover}
+                        onTouchStart={handleNoHover}
                         animate={noHovered ? { rotate: [0, 10, -10, 0], transition: { duration: 0.2 } } : {}}
-                        className="px-12 py-4 bg-gray-300 text-gray-700 text-2xl font-bold rounded-full shadow-lg transition-all z-50"
+                        className="w-full md:w-auto px-8 md:px-12 py-3 md:py-4 bg-gray-300 text-gray-700 text-xl md:text-2xl font-bold rounded-full shadow-lg transition-all z-50 order-1 md:order-2"
                     >
                         {noHovered ? "No 😢" : "No"}
                     </motion.button>
                 </div>
             </div>
 
-            <DancingBear style={{ bottom: '10px', left: '10px', fontSize: '3rem' }} />
-            <DancingBear style={{ bottom: '10px', right: '10px', fontSize: '3rem' }} />
+            <DancingBear style={{ bottom: '10px', left: '10px' }} className="text-4xl md:text-6xl" />
+            <DancingBear style={{ bottom: '10px', right: '10px' }} className="text-4xl md:text-6xl" />
         </div>
     );
 };

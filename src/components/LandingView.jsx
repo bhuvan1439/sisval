@@ -109,8 +109,8 @@ const LandingView = ({ onContinue }) => {
                 </form>
             </motion.div>
 
-            <DancingBear style={{ bottom: '20px', left: '20px', fontSize: '4rem' }} />
-            <DancingBear style={{ bottom: '20px', right: '20px', fontSize: '4rem' }} />
+            <DancingBear style={{ bottom: '20px', left: '20px' }} className="text-4xl md:text-7xl" />
+            <DancingBear style={{ bottom: '20px', right: '20px' }} className="text-4xl md:text-7xl" />
         </motion.div>
     );
 };

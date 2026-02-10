@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const DancingBear = ({ style }) => {
+const DancingBear = ({ style, className }) => {
     return (
         <motion.div
-            className="absolute text-6xl pointer-events-none z-0"
+            className={`absolute pointer-events-none z-0 ${className || 'text-6xl'}`}
             style={style}
             animate={{
                 y: [0, -20, 0],
